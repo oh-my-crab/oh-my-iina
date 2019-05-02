@@ -191,4 +191,16 @@ extension MainWindowController {
       vfWindow.reloadTable()
     }
   }
+  
+  @objc
+  func menuAddChapter(_ sender: NSMenuItem) {
+    player.chapters.append(MPVChapter(title: "#", startTime: player.info.videoPosition!.second, index: player.chapters.count))
+    player.chapters.sort { (a, b) -> Bool in
+      a.time < b.time
+    }
+    player.getChapters()
+    player.syncUI(.chapterList)
+    player.saveChapter()
+//    PlayerCore.active.mainWindow.playlistView.reloadData(playlist: false, chapters: true)
+  }
 }

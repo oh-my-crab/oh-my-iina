@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MPVChapter: NSObject {
+class MPVChapter: NSObject, Codable {
 
   private var privTitle: String?
   var title: String {
@@ -24,5 +24,6 @@ class MPVChapter: NSObject {
     self.time = VideoTime(startTime)
     self.index = index
   }
+  
 
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VideoTime {
+class VideoTime: Codable {
 
   static let infinite = VideoTime(999, 0, 0)
   static let zero = VideoTime(0)

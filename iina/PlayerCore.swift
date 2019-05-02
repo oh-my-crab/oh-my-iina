@@ -118,6 +118,8 @@ class PlayerCore: NSObject {
   }()
 
   lazy var info: PlaybackInfo = PlaybackInfo(self)
+  
+  var chapters: [MPVChapter] = []
 
   var syncPlayTimeTimer: Timer?
 
@@ -256,6 +258,23 @@ class PlayerCore: NSObject {
     info.fileLoading = true
     info.justOpenedFile = true
     mpv.command(.loadfile, args: [path])
+    loadChapter()
+  }
+  
+  func loadChapter() {
+    if let path = info.currentURL?.path {
+      if let json = try? String(contentsOfFile: path + ".chap", encoding: .utf8) {
+        chapters = try! JSONDecoder().decode([MPVChapter].self, from: json.data(using: .utf8)!)
+      }
+    }
+  }
+  
+  func saveChapter() {
+    if let path = info.currentURL?.path {
+      if let json = try? JSONEncoder().encode(chapters) {
+        try? json.write(to: URL(fileURLWithPath: path + ".chap"))
+      }
+    }
   }
 
   static func loadKeyBindings() {
@@ -1447,6 +1466,7 @@ class PlayerCore: NSObject {
 
   func getChapters() {
     info.chapters.removeAll()
+    info.chapters.append(contentsOf: chapters)
     let chapterCount = mpv.getInt(MPVProperty.chapterListCount)
     if chapterCount == 0 {
       return
@@ -1454,7 +1474,7 @@ class PlayerCore: NSObject {
     for index in 0..<chapterCount {
       let chapter = MPVChapter(title:     mpv.getString(MPVProperty.chapterListNTitle(index)),
                                startTime: mpv.getDouble(MPVProperty.chapterListNTime(index)),
-                               index:     index)
+                               index:     index + chapters.count)
       info.chapters.append(chapter)
     }
   }

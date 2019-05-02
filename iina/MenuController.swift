@@ -163,7 +163,9 @@ class MenuController: NSObject, NSMenuDelegate {
   @IBOutlet weak var inspector: NSMenuItem!
   @IBOutlet weak var miniPlayer: NSMenuItem!
 
-
+  @IBOutlet weak var omiina: NSMenu!
+  @IBOutlet weak var addChapter: NSMenuItem!
+  
   // MARK: - Construct Menus
 
   func bindMenuItems() {
@@ -381,6 +383,10 @@ class MenuController: NSObject, NSMenuDelegate {
 
     inspector.action = #selector(MainMenuActionHandler.menuShowInspector(_:))
     miniPlayer.action = #selector(MainWindowController.menuSwitchToMiniPlayer(_:))
+    
+    // OMIINA
+    //omiina.delegate = self
+    addChapter.action = #selector(MainWindowController.menuAddChapter(_:))
   }
 
   // MARK: - Update Menus
@@ -672,7 +678,8 @@ class MenuController: NSObject, NSMenuDelegate {
       (decreaseTextSize, false, ["multiply", "sub-scale", "0.9"], true, 0.71...0.99, nil),
       (resetTextSize, false, ["set", "sub-scale", "1"], true, nil, nil),
       (alwaysOnTop, false, ["cycle", "ontop"], false, nil, nil),
-      (fullScreen, false, ["cycle", "fullscreen"], false, nil, nil)
+      (fullScreen, false, ["cycle", "fullscreen"], false, nil, nil),
+      (addChapter, true, ["chapter-panel"], false, nil, nil)
     ]
 
     if #available(macOS 10.12, *) {

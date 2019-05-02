@@ -111,6 +111,7 @@ class PlaylistViewController: NSViewController, NSTableViewDataSource, NSTableVi
     let action = #selector(performDoubleAction(sender:))
     playlistTableView.doubleAction = action
     playlistTableView.target = self
+    chapterTableView.doubleAction = action
 
     // register for drag and drop
     playlistTableView.registerForDraggedTypes([.iinaPlaylistItem, .nsFilenames, .nsURL, .string])
@@ -397,13 +398,26 @@ class PlaylistViewController: NSViewController, NSTableViewDataSource, NSTableVi
     player.toggleShuffle()
   }
 
-
+  @IBAction func removeChapterAction(_ sender: Any) {
+    if chapterTableView.selectedRow < 0 || chapterTableView.selectedRow > player.chapters.count {
+      return
+    }
+    player.chapters.remove(at: chapterTableView.selectedRow)
+    player.getChapters()
+    player.syncUI(.chapterList)
+    player.saveChapter()
+  }
+  
   @objc func performDoubleAction(sender: AnyObject) {
     let tv = sender as! NSTableView
     if tv.numberOfSelectedRows > 0 {
-      player.playFileInPlaylist(tv.selectedRow)
-      tv.deselectAll(self)
-      tv.reloadData()
+      if tv == playlistTableView {
+        player.playFileInPlaylist(tv.selectedRow)
+        tv.deselectAll(self)
+        tv.reloadData()
+      } else {
+        playChapter(tv.selectedRow)
+      }
     }
   }
 
@@ -438,12 +452,21 @@ class PlaylistViewController: NSViewController, NSTableViewDataSource, NSTableVi
       showTotalLength()
       return
     }
-    guard tv.numberOfSelectedRows > 0 else { return }
-    let index = tv.selectedRow
+//    guard tv.numberOfSelectedRows > 0 else { return }
+//    let index = tv.selectedRow
+//    player.playChapter(index)
+//    let chapter = player.info.chapters[index]
+//    tv.deselectAll(self)
+//    tv.reloadData()
+//    mainWindow.displayOSD(.chapter(chapter.title))
+  }
+  
+  func playChapter(_ index: Int) {
+//    guard tv.numberOfSelectedRows > 0 else { return }
     player.playChapter(index)
     let chapter = player.info.chapters[index]
-    tv.deselectAll(self)
-    tv.reloadData()
+//    tv.deselectAll(self)
+//    tv.reloadData()
     mainWindow.displayOSD(.chapter(chapter.title))
   }
 
