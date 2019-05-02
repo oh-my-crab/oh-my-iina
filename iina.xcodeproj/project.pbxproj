@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1326717E20852D0D000FA7E2 /* SubChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1326718020852D0D000FA7E2 /* SubChooseViewController.xib */; };
+		3A34D8BE2279E28D009F634D /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A34D8BD2279E28D009F634D /* libmpv.dylib */; };
 		49542975216C34950058F680 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49542974216C34950058F680 /* Cocoa.framework */; };
 		49542978216C34950058F680 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49542977216C34950058F680 /* SafariExtensionHandler.swift */; };
 		49542980216C34950058F680 /* open-in-iina.js in Resources */ = {isa = PBXBuildFile; fileRef = 4954297F216C34950058F680 /* open-in-iina.js */; };
@@ -44,7 +45,6 @@
 		8404572121A91A0900DF2424 /* libuchardet.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840456F821A91A0400DF2424 /* libuchardet.0.dylib */; };
 		8404572221A91A0900DF2424 /* libdvdnav.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840456F921A91A0400DF2424 /* libdvdnav.4.dylib */; };
 		8404572321A91A0900DF2424 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840456FA21A91A0400DF2424 /* libSDL2-2.0.0.dylib */; };
-		8404572421A91A0900DF2424 /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840456FB21A91A0400DF2424 /* libmpv.dylib */; };
 		8404572521A91A0900DF2424 /* libdvdread.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840456FC21A91A0400DF2424 /* libdvdread.4.dylib */; };
 		8404572621A91A0900DF2424 /* libharfbuzz.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840456FD21A91A0400DF2424 /* libharfbuzz.0.dylib */; };
 		8404572721A91A0900DF2424 /* libass.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 840456FE21A91A0400DF2424 /* libass.9.dylib */; };
@@ -98,7 +98,6 @@
 		8404578721A91CBB00DF2424 /* liblua.5.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 840456F721A91A0300DF2424 /* liblua.5.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8404578821A91CBB00DF2424 /* liblzma.5.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 8404570521A91A0500DF2424 /* liblzma.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8404578921A91CBB00DF2424 /* libmp3lame.0.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 8404570E21A91A0700DF2424 /* libmp3lame.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		8404578A21A91CBB00DF2424 /* libmpv.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 840456FB21A91A0400DF2424 /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8404578B21A91CBB00DF2424 /* libogg.0.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 8404570F21A91A0700DF2424 /* libogg.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8404578C21A91CBB00DF2424 /* libopus.0.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 8404571021A91A0700DF2424 /* libopus.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8404578D21A91CBB00DF2424 /* libpcre.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 8404570A21A91A0600DF2424 /* libpcre.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -334,7 +333,6 @@
 				8404578721A91CBB00DF2424 /* liblua.5.1.dylib in Copy Dylibs */,
 				8404578821A91CBB00DF2424 /* liblzma.5.dylib in Copy Dylibs */,
 				8404578921A91CBB00DF2424 /* libmp3lame.0.dylib in Copy Dylibs */,
-				8404578A21A91CBB00DF2424 /* libmpv.dylib in Copy Dylibs */,
 				8404578B21A91CBB00DF2424 /* libogg.0.dylib in Copy Dylibs */,
 				8404578C21A91CBB00DF2424 /* libopus.0.dylib in Copy Dylibs */,
 				8404578D21A91CBB00DF2424 /* libpcre.1.dylib in Copy Dylibs */,
@@ -443,6 +441,8 @@
 		2FE1FCAF1F98D3DB004C4D6B /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = sk; path = sk.lproj/Contribution.rtf; sourceTree = "<group>"; };
 		2FE1FCB01F98D3DB004C4D6B /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/FilterPresets.strings; sourceTree = "<group>"; };
 		2FE1FCB11F98D3DB004C4D6B /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/KeyBinding.strings; sourceTree = "<group>"; };
+		3A34D8B92279E235009F634D /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpv.dylib; path = "../../../../../usr/local/Cellar/mpv-iina/0.29.1_3/lib/libmpv.dylib"; sourceTree = "<group>"; };
+		3A34D8BD2279E28D009F634D /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpv.dylib; path = deps/lib/libmpv.dylib; sourceTree = "<group>"; };
 		440DDE351E9010420063E211 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		440DDE361E9010420063E211 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainWindowController.strings; sourceTree = "<group>"; };
 		440DDE371E9010420063E211 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/QuickSettingViewController.strings; sourceTree = "<group>"; };
@@ -737,7 +737,6 @@
 		840456F821A91A0400DF2424 /* libuchardet.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libuchardet.0.dylib; path = deps/lib/libuchardet.0.dylib; sourceTree = "<group>"; };
 		840456F921A91A0400DF2424 /* libdvdnav.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libdvdnav.4.dylib; path = deps/lib/libdvdnav.4.dylib; sourceTree = "<group>"; };
 		840456FA21A91A0400DF2424 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "deps/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
-		840456FB21A91A0400DF2424 /* libmpv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpv.dylib; path = deps/lib/libmpv.dylib; sourceTree = "<group>"; };
 		840456FC21A91A0400DF2424 /* libdvdread.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libdvdread.4.dylib; path = deps/lib/libdvdread.4.dylib; sourceTree = "<group>"; };
 		840456FD21A91A0400DF2424 /* libharfbuzz.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libharfbuzz.0.dylib; path = deps/lib/libharfbuzz.0.dylib; sourceTree = "<group>"; };
 		840456FE21A91A0400DF2424 /* libass.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libass.9.dylib; path = deps/lib/libass.9.dylib; sourceTree = "<group>"; };
@@ -981,7 +980,7 @@
 		84E48D4C1E0F1090002C7A3F /* FilterWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterWindowController.swift; sourceTree = "<group>"; };
 		84E745D51DFDD4FD00588DED /* KeyCodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodeHelper.swift; sourceTree = "<group>"; };
 		84E745D81DFDE8C100588DED /* input.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.conf; sourceTree = "<group>"; };
-		84EB1ED61D2F51D3004FA5A1 /* IINA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IINA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EB1ED61D2F51D3004FA5A1 /* OMIINA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMIINA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EB1ED91D2F51D3004FA5A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EB1EDB1D2F51D3004FA5A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84EB1EE01D2F51D3004FA5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1291,6 +1290,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A34D8BE2279E28D009F634D /* libmpv.dylib in Frameworks */,
 				8404572B21A91A0900DF2424 /* libvorbisenc.2.dylib in Frameworks */,
 				8404573321A91A0900DF2424 /* libpcre.1.dylib in Frameworks */,
 				8404573D21A91A0900DF2424 /* libavformat.58.20.100.dylib in Frameworks */,
@@ -1298,7 +1298,6 @@
 				8404573621A91A0900DF2424 /* libgraphite2.3.dylib in Frameworks */,
 				8404572321A91A0900DF2424 /* libSDL2-2.0.0.dylib in Frameworks */,
 				8404573B21A91A0900DF2424 /* libglib-2.0.0.dylib in Frameworks */,
-				8404572421A91A0900DF2424 /* libmpv.dylib in Frameworks */,
 				8404572821A91A0900DF2424 /* libdvdcss.2.dylib in Frameworks */,
 				8404571B21A91A0900DF2424 /* libfreetype.6.dylib in Frameworks */,
 				8404572021A91A0900DF2424 /* liblua.5.1.dylib in Frameworks */,
@@ -1441,6 +1440,8 @@
 		848290731D95978100C3C76C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A34D8BD2279E28D009F634D /* libmpv.dylib */,
+				3A34D8B92279E235009F634D /* libmpv.dylib */,
 				8404570921A91A0600DF2424 /* libarchive.13.dylib */,
 				840456FE21A91A0400DF2424 /* libass.9.dylib */,
 				8404571721A91A0800DF2424 /* libavcodec.58.35.100.dylib */,
@@ -1465,7 +1466,6 @@
 				840456F721A91A0300DF2424 /* liblua.5.1.dylib */,
 				8404570521A91A0500DF2424 /* liblzma.5.dylib */,
 				8404570E21A91A0700DF2424 /* libmp3lame.0.dylib */,
-				840456FB21A91A0400DF2424 /* libmpv.dylib */,
 				8404570F21A91A0700DF2424 /* libogg.0.dylib */,
 				8404571021A91A0700DF2424 /* libopus.0.dylib */,
 				8404570A21A91A0600DF2424 /* libpcre.1.dylib */,
@@ -1881,7 +1881,7 @@
 		84EB1ED71D2F51D3004FA5A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84EB1ED61D2F51D3004FA5A1 /* IINA.app */,
+				84EB1ED61D2F51D3004FA5A1 /* OMIINA.app */,
 				E3DE8DCA1FD8166A0021921C /* iina-cli */,
 				49542973216C34950058F680 /* OpenInIINA.appex */,
 			);
@@ -2004,7 +2004,7 @@
 			);
 			name = iina;
 			productName = mpvx;
-			productReference = 84EB1ED61D2F51D3004FA5A1 /* IINA.app */;
+			productReference = 84EB1ED61D2F51D3004FA5A1 /* OMIINA.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E3DE8DC91FD8166A0021921C /* iina-cli */ = {
@@ -2056,6 +2056,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				Base,
 				en,
 				"zh-Hans",
@@ -3206,7 +3207,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.colliderli.iina.OpenInIINA;
+				PRODUCT_BUNDLE_IDENTIFIER = me.ligoudan.omiina.OpenInIINA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3231,7 +3232,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.colliderli.iina.OpenInIINA;
+				PRODUCT_BUNDLE_IDENTIFIER = me.ligoudan.omiina.OpenInIINA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3375,13 +3376,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/deps/lib",
 					"$(PROJECT_DIR)/deps/lib",
+					"/usr/local/Cellar/mpv-iina/0.29.1_3/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MODULEMAP_FILE = module.modulemap;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colliderli.iina;
-				PRODUCT_NAME = IINA;
+				PRODUCT_BUNDLE_IDENTIFIER = me.ligoudan.omiina;
+				PRODUCT_NAME = OMIINA;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iina/iina-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3413,13 +3415,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/deps/lib",
 					"$(PROJECT_DIR)/deps/lib",
+					"/usr/local/Cellar/mpv-iina/0.29.1_3/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MODULEMAP_FILE = module.modulemap;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colliderli.iina;
-				PRODUCT_NAME = IINA;
+				PRODUCT_BUNDLE_IDENTIFIER = me.ligoudan.omiina;
+				PRODUCT_NAME = OMIINA;
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "iina/iina-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
