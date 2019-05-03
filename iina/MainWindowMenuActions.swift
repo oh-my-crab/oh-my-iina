@@ -194,7 +194,14 @@ extension MainWindowController {
   
   @objc
   func menuAddChapter(_ sender: NSMenuItem) {
+    if player.info.videoPosition == nil {
+      return
+    }
     player.chapters.append(MPVChapter(title: "#", startTime: player.info.videoPosition!.second, index: player.chapters.count))
+    let link = "omiina://goto?file=\(player.info.currentURL!.path)&pos=\(player.info.videoPosition!.stringRepresentation)"
+    let pasteboard = NSPasteboard.general
+    pasteboard.declareTypes([.string], owner: nil)
+    pasteboard.setString(link, forType: .string)
     player.chapters.sort { (a, b) -> Bool in
       a.time < b.time
     }

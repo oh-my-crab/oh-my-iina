@@ -696,6 +696,11 @@ class MPVController: NSObject {
     if !Preference.bool(for: .pauseWhenOpen) {
       setFlag(MPVOption.PlaybackControl.pause, false)
     }
+    if player.goto != nil {
+      player.info.videoPosition = player.goto
+      player.seek(absoluteSecond: player.info.videoPosition!.second)
+      player.goto = nil
+    }
     player.syncUI(.playlist)
   }
 

@@ -446,10 +446,10 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>IINA wrapper</string>
+			<string>OMIINA wrapper</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>iina</string>
+				<string>omiina</string>
 			</array>
 		</dict>
 	</array>
@@ -529,7 +529,7 @@
 				<string>public.audio</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Monkey's Audio Lossless Audio</string>
+			<string>Monkey&apos;s Audio Lossless Audio</string>
 			<key>UTTypeIdentifier</key>
 			<string>io.iina.ape</string>
 			<key>UTTypeTagSpecification</key>

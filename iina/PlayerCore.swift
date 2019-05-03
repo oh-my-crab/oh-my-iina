@@ -75,6 +75,8 @@ class PlayerCore: NSObject {
   }
 
   // MARK: - Fields
+  
+  var goto: VideoTime?
 
   lazy var subsystem = Logger.Subsystem(rawValue: "player\(label!)")
 

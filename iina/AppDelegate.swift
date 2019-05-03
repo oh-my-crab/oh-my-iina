@@ -407,6 +407,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
 
       Logger.log("Finished URL scheme handling")
+    } else if host == "goto" {
+      guard let queries = parsed.queryItems else { return }
+      let queryDict = [String: String](uniqueKeysWithValues: queries.map { ($0.name, $0.value ?? "") })
+      
+      guard let file = queryDict["file"], !file.isEmpty else {
+        Logger.log("Cannot find parameter \"file\", stopped")
+        return
+      }
+      
+      guard let pos = queryDict["pos"], !pos.isEmpty else {
+        Logger.log("Cannot find parameter \"pos\", stopped")
+        return
+      }
+      
+      let player: PlayerCore
+      player = PlayerCore.activeOrNew
+      player.openURLString(file)
+      player.goto = VideoTime(pos)
     }
   }
 
