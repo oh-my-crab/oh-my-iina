@@ -200,8 +200,8 @@ extension MainWindowController {
     player.chapters.append(MPVChapter(title: "#", startTime: player.info.videoPosition!.second, index: player.chapters.count))
     let link = "omiina://goto?file=\(player.info.currentURL!.path)&pos=\(player.info.videoPosition!.stringRepresentation)"
     let pasteboard = NSPasteboard.general
-    pasteboard.declareTypes([.string], owner: nil)
-    pasteboard.setString(link, forType: .string)
+    pasteboard.declareTypes([.html], owner: nil)
+    pasteboard.setString("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"></head><body><a href='\(link)'>\(player.info.currentURL!.path) \(player.info.videoPosition!.stringRepresentation)</a></body></html>", forType: .html)
     player.chapters.sort { (a, b) -> Bool in
       a.time < b.time
     }

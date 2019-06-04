@@ -398,6 +398,18 @@ class PlaylistViewController: NSViewController, NSTableViewDataSource, NSTableVi
     player.toggleShuffle()
   }
 
+  @IBAction func copyGotoLinkAction(_ sender: Any) {
+    
+    if player.info.videoPosition == nil {
+      return
+    }
+    let pos = player.chapters[chapterTableView.selectedRow].time
+    let link = "omiina://goto?file=\(player.info.currentURL!.path)&pos=\(pos.stringRepresentation)"
+    let pasteboard = NSPasteboard.general
+    pasteboard.declareTypes([.html], owner: nil)
+    pasteboard.setString("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"></head><body><a href='\(link)'>\(player.info.currentURL!.path) \(pos.stringRepresentation)</a></body></html>", forType: .html)
+  }
+  
   @IBAction func removeChapterAction(_ sender: Any) {
     if chapterTableView.selectedRow < 0 || chapterTableView.selectedRow > player.chapters.count {
       return

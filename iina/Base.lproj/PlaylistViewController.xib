@@ -432,6 +432,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="copyGotoLinkAction:" target="-2" id="u9U-ur-Lgf"/>
+                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gxA-8A-QDl">
                                                 <rect key="frame" x="24" y="0.0" width="24" height="24"/>
@@ -541,7 +544,7 @@
                     <rect key="frame" x="8" y="28" width="224" height="42"/>
                     <clipView key="contentView" drawsBackground="NO" id="6rI-3b-JZo">
                         <rect key="frame" x="0.0" y="0.0" width="224" height="42"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" id="puj-Kl-qOI">
                                 <rect key="frame" x="0.0" y="0.0" width="403" height="42"/>

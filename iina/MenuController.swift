@@ -679,7 +679,7 @@ class MenuController: NSObject, NSMenuDelegate {
       (resetTextSize, false, ["set", "sub-scale", "1"], true, nil, nil),
       (alwaysOnTop, false, ["cycle", "ontop"], false, nil, nil),
       (fullScreen, false, ["cycle", "fullscreen"], false, nil, nil),
-      (addChapter, true, ["chapter-panel"], false, nil, nil)
+      (addChapter, true, ["add-chapter"], false, nil, nil)
     ]
 
     if #available(macOS 10.12, *) {

@@ -2783,6 +2783,8 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
       let item = NSMenuItem()
       item.tag = 3
       self.menuChangeWindowSize(item)
+    case .addChapter:
+      self.menuAddChapter(.dummy)
     }
   }
 
