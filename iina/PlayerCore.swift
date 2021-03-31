@@ -264,6 +264,7 @@ class PlayerCore: NSObject {
   }
   
   func loadChapter() {
+    chapters = []
     if let path = info.currentURL?.path {
       if let json = try? String(contentsOfFile: path + ".chap", encoding: .utf8) {
         chapters = try! JSONDecoder().decode([MPVChapter].self, from: json.data(using: .utf8)!)
@@ -1467,6 +1468,7 @@ class PlayerCore: NSObject {
   }
 
   func getChapters() {
+    loadChapter()
     info.chapters.removeAll()
     info.chapters.append(contentsOf: chapters)
     let chapterCount = mpv.getInt(MPVProperty.chapterListCount)

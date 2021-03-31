@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -663,10 +663,14 @@ CA
                             <menuItem title="Add Chapter" keyEquivalent="c" id="0s3-pz-yWJ">
                                 <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                             </menuItem>
+                            <menuItem title="Copy Chapter URL" keyEquivalent="C" id="zkS-9z-xve">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="139" y="154"/>
         </menu>
         <customObject id="cyK-tE-xgA" customClass="MenuController" customModule="OMIINA" customModuleProvider="target">
             <connections>
@@ -685,6 +689,7 @@ CA
                 <outlet property="chapter" destination="Fal-I4-PZk" id="DiY-VN-JpS"/>
                 <outlet property="chapterMenu" destination="d9c-me-L2H" id="Gs5-BM-ZGm"/>
                 <outlet property="chapterPanel" destination="DwM-3d-Eb9" id="Z0I-q7-mi7"/>
+                <outlet property="copyChapterURL" destination="zkS-9z-xve" id="Tq7-bz-AqU"/>
                 <outlet property="cropMenu" destination="eo2-Tt-SLx" id="uii-FZ-2wL"/>
                 <outlet property="customTouchBar" destination="ZnF-yX-7jP" id="vSq-yD-whq"/>
                 <outlet property="cycleAudioTracks" destination="n8f-ub-Udb" id="Mi8-8E-kaH"/>

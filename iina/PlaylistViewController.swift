@@ -407,7 +407,7 @@ class PlaylistViewController: NSViewController, NSTableViewDataSource, NSTableVi
     let link = "omiina://goto?file=\(player.info.currentURL!.path)&pos=\(pos.stringRepresentation)"
     let pasteboard = NSPasteboard.general
     pasteboard.declareTypes([.html], owner: nil)
-    pasteboard.setString("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"></head><body><a href='\(link)'>\(player.info.currentURL!.path) \(pos.stringRepresentation)</a></body></html>", forType: .html)
+    pasteboard.setString("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"></head><body><a href='\(link)'>\(player.info.currentURL!.pathComponents[player.info.currentURL!.pathComponents.count - 2] + "/" + player.info.currentURL!.pathComponents.last!) \(pos.stringRepresentation)</a></body></html>", forType: .html)
   }
   
   @IBAction func removeChapterAction(_ sender: Any) {
@@ -415,9 +415,9 @@ class PlaylistViewController: NSViewController, NSTableViewDataSource, NSTableVi
       return
     }
     player.chapters.remove(at: chapterTableView.selectedRow)
+    player.saveChapter()
     player.getChapters()
     player.syncUI(.chapterList)
-    player.saveChapter()
   }
   
   @objc func performDoubleAction(sender: AnyObject) {

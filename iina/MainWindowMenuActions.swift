@@ -201,13 +201,32 @@ extension MainWindowController {
     let link = "omiina://goto?file=\(player.info.currentURL!.path)&pos=\(player.info.videoPosition!.stringRepresentation)"
     let pasteboard = NSPasteboard.general
     pasteboard.declareTypes([.html], owner: nil)
-    pasteboard.setString("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"></head><body><a href='\(link)'>\(player.info.currentURL!.path) \(player.info.videoPosition!.stringRepresentation)</a></body></html>", forType: .html)
+    pasteboard.setString("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"></head><body><a href='\(link)'>\(player.info.currentURL!.pathComponents[player.info.currentURL!.pathComponents.count - 2] + "/" + player.info.currentURL!.pathComponents.last!) \(player.info.videoPosition!.stringRepresentation)</a></body></html>", forType: .html)
     player.chapters.sort { (a, b) -> Bool in
       a.time < b.time
     }
+    player.saveChapter()
     player.getChapters()
     player.syncUI(.chapterList)
+//    PlayerCore.active.mainWindow.playlistView.reloadData(playlist: false, chapters: true)
+  }
+  
+  @objc
+  func menuCopyChapterURL(_ sender: NSMenuItem) {
+    if player.info.videoPosition == nil {
+      return
+    }
+    player.chapters.append(MPVChapter(title: "#", startTime: player.info.videoPosition!.second, index: player.chapters.count))
+    let link = "omiina://goto?file=\(player.info.currentURL!.path)&pos=\(player.info.videoPosition!.stringRepresentation)"
+    let pasteboard = NSPasteboard.general
+    pasteboard.declareTypes([.string], owner: nil)
+    pasteboard.setString(link, forType: .string)
+    player.chapters.sort { (a, b) -> Bool in
+      a.time < b.time
+    }
     player.saveChapter()
+    player.getChapters()
+    player.syncUI(.chapterList)
 //    PlayerCore.active.mainWindow.playlistView.reloadData(playlist: false, chapters: true)
   }
 }

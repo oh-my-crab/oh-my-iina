@@ -165,6 +165,7 @@ class MenuController: NSObject, NSMenuDelegate {
 
   @IBOutlet weak var omiina: NSMenu!
   @IBOutlet weak var addChapter: NSMenuItem!
+  @IBOutlet weak var copyChapterURL: NSMenuItem!
   
   // MARK: - Construct Menus
 
@@ -387,6 +388,7 @@ class MenuController: NSObject, NSMenuDelegate {
     // OMIINA
     //omiina.delegate = self
     addChapter.action = #selector(MainWindowController.menuAddChapter(_:))
+    copyChapterURL.action = #selector(MainWindowController.menuCopyChapterURL(_:))
   }
 
   // MARK: - Update Menus
@@ -679,7 +681,8 @@ class MenuController: NSObject, NSMenuDelegate {
       (resetTextSize, false, ["set", "sub-scale", "1"], true, nil, nil),
       (alwaysOnTop, false, ["cycle", "ontop"], false, nil, nil),
       (fullScreen, false, ["cycle", "fullscreen"], false, nil, nil),
-      (addChapter, true, ["add-chapter"], false, nil, nil)
+      (addChapter, true, ["add-chapter"], false, nil, nil),
+      (addChapter, true, ["copy-chapter-url"], false, nil, nil)
     ]
 
     if #available(macOS 10.12, *) {
